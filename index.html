@@ -28,6 +28,8 @@
                     <li><a href="Pages/contact.html">Contact</a></li>
                     <li>
                         <a href="#"><i class="fa fa-search"></i></a>
+                        <input type="text" id="searchInput" placeholder="search..."
+                            style="padding: 5px; border: 5px; background-color: #f9e8e8bf; outline: beige;">
                     </li>
                 </ul>
             </nav>
@@ -171,7 +173,7 @@
                 <input type="text" name="user_name" id=" your name" placeholder="Your Name" required />
                 <br /><br />
                 <label for="Your email"></label>
-                <input type="text" name=" user_email" id="You email" placeholder="Your Email" required/>
+                <input type="text" name=" user_email" id="You email" placeholder="Your Email" required />
                 <br /><br />
                 <label for="Your Phone Number"></label>
                 <input type="tel" name="Your Phone Number" id="phone" id=" your phone number"
@@ -179,7 +181,7 @@
                 <br /><br />
                 <textarea name="message" id="Message" placeholder=" MASSAGE" rows="4" cols="30" required></textarea>
                 <div class="formbtn">
-                <button type="submit">Contact us</button>
+                    <button type="submit">Contact us</button>
                 </div>
             </form>
             <p id="status"></p>
@@ -212,6 +214,30 @@
             </footer>
         </div>
         <script src="./script/script.js"></script>
+        <script>
+  const searchInput = document.getElementById("searchInput");
+
+  searchInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      const query = this.value.trim().toLowerCase();
+
+      if (query === "home") {
+        window.location.href = "index.html";
+      } else if (query === "about") {
+        window.location.href = "pages/about.html";
+      } else if (query === "coffee") {
+        window.location.href = "pages/coffee.html";
+      } else if (query === "blog") {
+        window.location.href = "pages/blog.html";
+      } else if (query === "contact") {
+        window.location.href = "pages/contact.html";
+      } else {
+        alert("No matching page found");
+      }
+    }
+  });
+</script>
+
 </body>
 
 </html>
